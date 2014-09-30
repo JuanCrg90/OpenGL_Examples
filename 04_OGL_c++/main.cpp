@@ -57,8 +57,6 @@ void display(void)
 
     fig.triangles();
 
-
-
     glFlush();
     glutPostRedisplay();
 

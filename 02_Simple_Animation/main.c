@@ -33,7 +33,7 @@ int main(int argc,char *argv[])
 
     glutReshapeFunc(reshape);
 
-    glutIdleFunc(idle); //Aqui aplicaremos las actualizaciones de estado
+    //glutIdleFunc(idle); //Aqui aplicaremos las actualizaciones de estado
 
     glutMainLoop();
 
@@ -62,18 +62,20 @@ void display(void)
     glClear(GL_COLOR_BUFFER_BIT);
 
     //https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml
+
+
     glPushMatrix();
-        glScalef(0.5,0.5,0.5);
-        glTranslatef(triangletraslate,-1.0,0.0);
-        triangles();
+    glScalef(0.5,0.5,0.5);
+    glTranslatef(triangletraslate,-1.0,0.0);
+    triangles();
 
-        glLoadIdentity();
+    glLoadIdentity();
 
-        glScalef(0.5,0.5,0.5);
-        glTranslatef(quadtraslate,1.0,0.0);
-        glBegin(GL_QUADS);
-        quads();
-    glEnd();
+    glScalef(0.5,0.5,0.5);
+    glTranslatef(quadtraslate,1.0,0.0);
+
+    quads();
+
     //https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml
     glPopMatrix();
 
@@ -98,30 +100,30 @@ void idle(void)
 }
 void triangles(void)
 {
+
     glBegin(GL_TRIANGLES);
-        glBegin(GL_TRIANGLES);
-        glColor3f(1.0f,0.0f,0.0f);
-        glVertex3f(0.0f, 1.0f, 0.0f);
-        glColor3f(0.0f,1.0f,0.0f);
-        glVertex3f(-1.0f,-1.0f, 0.0f);
-        glColor3f(0.0f,0.0f,1.0f);
-        glVertex3f( 1.0f,-1.0f, 0.0f);
+    glColor3f(1.0f,0.0f,0.0f);
+    glVertex3f(0.0f, 1.0f, 0.0f);
+
+    glVertex3f(-1.0f,-1.0f, 0.0f);
+
+    glVertex3f( 1.0f,-1.0f, 0.0f);
     glEnd();
-    glEnd();
+
 
 }
 
 void quads(void)
 {
     glBegin(GL_QUADS);
-        glColor3f(1.0,0.0,0.0);
-        glVertex3f(-1.0f, 1.0f, 0.0f);
-        glColor3f(0.0,1.0,0.0);
-        glVertex3f( 1.0f, 1.0f, 0.0f);
-        glColor3f(0.0,0.0,1.0);
-        glVertex3f( 1.0f,-1.0f, 0.0f);
-        glColor3f(1.0,0.0,1.0);
-        glVertex3f(-1.0f,-1.0f, 0.0f);
+    glColor3f(0.0,1.0,0.0);
+    glVertex3f(-1.0f, 1.0f, 0.0f);
+
+    glVertex3f( 1.0f, 1.0f, 0.0f);
+
+    glVertex3f( 1.0f,-1.0f, 0.0f);
+
+    glVertex3f(-1.0f,-1.0f, 0.0f);
     glEnd();
 
 }

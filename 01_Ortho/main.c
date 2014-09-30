@@ -32,16 +32,22 @@ void init(void)
 
 void reshape(int width,int height)
 {
+    printf("%d %d\n",width,height);
+
+
     glViewport(0,0,width,height);
 
     //https://www.opengl.org/sdk/docs/man2/xhtml/glMatrixMode.xml
     glMatrixMode(GL_PROJECTION);
-
     glLoadIdentity();
-    //glOrtho(0.0f,10.0f,0.0f,10.0f,-1.0f,1.0f);
+
+
+    glOrtho(-10.0f,10.0f,-10.0f,10.0f,-1.0f,1.0f);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+
+
     glutPostRedisplay();
 }
 

@@ -6,5 +6,6 @@ CONFIG -= qt
 SOURCES += main.c
 
 
+win32: LIBS += -lglut32 -lopengl32
+else:unix: LIBS += -lGL -lglut
 
-LIBS += -lm -lGL -lglut -lGLU

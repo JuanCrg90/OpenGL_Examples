@@ -1,6 +1,10 @@
+//Programa 00_Hello_World
+//Autor Juan Carlos Ruiz
+
 #include <stdio.h>
 #include <GL/glut.h> //biblioteca para creación de las ventanas FREEGLUT
 #include <GL/gl.h>  //biblioteca de primitivas de OpenGL
+
 
 void display(); //función de pintado
 
@@ -69,10 +73,10 @@ void display(void)
     //					Similar a LINE_LOOP							//
     //----------------------------------------------------------------
 
-
-    glBegin(GL_TRIANGLES);
+    glPointSize(5.0f);
+    glBegin(GL_LINE_LOOP);
     glColor3f(1.0f,0.0f,0.0f);
-    glVertex2f(0.0f,1.0f);
+    glVertex2f(0.0f,1.0f);    
     glColor3f(0.0f,1.0f,0.0f);
     glVertex2f(-1.0f,-1.0f);
     glColor3f(0.0f,0.0f,1.0f);
